@@ -1,0 +1,31 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "REST API for user management with refresh and access tokens",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r esm index.js",
+    "start": "node -r esm index.js",
+    "genkeys": "node -r esm services/generateKeys.js"
+  },
+  "keywords": [],
+  "author": "Pinaki Bhattacharjee <pinakipb2@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.0",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "redis": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
