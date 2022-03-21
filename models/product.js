@@ -6,10 +6,10 @@ const productSchema = new mongoose.Schema(
     name: {
       type: String,
       minlength: 3,
-      maxlength: 50,
+      maxlength: 200,
       trim: true,
       required: true,
-      unique: true,
+      // unique: true,
     },
     price: {
       type: Number,

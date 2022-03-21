@@ -2,6 +2,7 @@ import express from 'express';
 import './config/init_env';
 const morgan = require('morgan');
 import createError from 'http-errors';
+import path from 'path';
 
 import routes from './routes';
 
@@ -9,6 +10,7 @@ import { DBConnect, RedisClient } from './config';
 
 const app = express();
 
+global.appRoot = path.resolve(__dirname);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
@@ -18,6 +20,7 @@ const RedisConnect = async () => {
   await RedisClient.connect();
 };
 RedisConnect();
+
 
 app.get('/', async (req, res, next) => {
   res.send({ message: 'Welcome to REST API 😎' });
